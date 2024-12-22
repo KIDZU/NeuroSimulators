@@ -60,6 +60,22 @@ body {
   fill: rgba(240, 127, 174, 1);
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95vw;
+  }
+
+  .nav_links {
+    gap: 12px;
+  }
+
+  .nav_links_link {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+}
+
 .menu {
   padding-top: 30px;
   display: flex;
@@ -181,7 +197,7 @@ body {
   }
 
   .menu_user_data_search_adaptive {
-    display: static;
+    display: initial;
   }
 }
 
@@ -192,6 +208,52 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 250px;
+  }
+
+  .menu_contacts_container_el_phone {
+    gap: 10px;
+  }
+
+  .menu_contacts_container_el_mail {
+    gap: 10px;
+  }
+
+  .menu_contacts_container_el_phone svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .menu_contacts_container_el_phone p {
+    font-size: 16px;
+  }
+
+  .menu_contacts_container_el_mail svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .menu_contacts_container_el_mail p {
+    font-size: 16px;
+  }
+
+  .menu_contacts_info {
+    font-size: 15px;
+  }
+
+  .menu_user_data {
+    gap: 15px;
+  }
+
+  .menu_user_data svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 
 .sections {
   margin-bottom: 52px;
@@ -216,6 +278,25 @@ body {
 
 .sections a:hover {
   color: rgba(240, 127, 174, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .sections ul {
+    padding: 15px 22px;
+  }
+
+  .sections li {
+    display: inline;
+    text-align: center;
+  }
+
+  .sections a {
+    font-size: 16px;
+    text-align: center;
+
+  }
+
+
 }
 
 .info_block_container {
