@@ -60,6 +60,22 @@ body {
   fill: rgba(240, 127, 174, 1);
 }
 
+.nav_phoneWidth_opened {
+  display: none;
+  width: 80%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100%;
+  padding: 10px 30px;
+  z-index: 2;
+}
+
+.nav_phoneWidth_opened.active {
+  display: initial;
+}
+
 @media screen and (min-width: 769px) and (max-width: 1250px) {
   .nav_links {
     flex-wrap: wrap;
@@ -93,6 +109,26 @@ body {
 @media screen and (max-width: 320px) {
   .nav {
     display: none;
+  }
+
+  .nav_phoneWidth_opened {
+    display: none;
+  }
+
+  .nav_icons {
+    justify-content: start;
+    padding-top: 15px;
+  }
+
+
+  .nav_phoneWidth_opened ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .menu_phoneWidth_button {
+    z-index: 3;
   }
 
 
