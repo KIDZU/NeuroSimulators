@@ -899,9 +899,11 @@ body {
 }
 
 .catalog_container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 285px);
+  grid-auto-rows: max-content;
   justify-content: space-between;
-  align-items: center;
+
 }
 
 .catalog_container_card {
@@ -912,10 +914,12 @@ body {
   grid-auto-rows: auto;
   vertical-align: middle;
   gap: 10px;
+  height: 100%;
 }
 
 .catalog_container_card_text {
   width: 100%;
+  margin-bottom: auto;
 }
 
 .catalog_container_card h4 {
@@ -946,7 +950,7 @@ body {
 
 .catalog_container_card_image {
   text-align: center;
-
+  height: 150px;
 }
 
 .catalog_container_card_text_title {
@@ -1029,4 +1033,98 @@ body {
   font-size: 16px;
   font-weight: 700;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1468px) {
+  .catalog_container {
+    grid-template-columns: repeat(3, 285px);
+  }
+
+  .catalog_container_card:nth-child(4) {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1104px) {
+  .catalog_container_card:nth-child(3) {
+    display: none;
+  }
+
+  .catalog_container {
+    grid-template-columns: repeat(2, 45%);
+  }
+
+}
+
+@media screen and (max-width: 612px) {
+  .catalog_container_card_text p {
+    display: none;
+
+  }
+
+  .catalog_container_card_purchase_buy_quantity {
+    display: none;
+  }
+
+  .catalog_container_card_purchase_buy {
+    width: 100%;
+  }
+
+  .catalog_container_card {
+    padding: 25px 10px 10px 10px;
+    height: 300px;
+  }
+
+  .catalog_container_card_purchase_buy button {
+    border-radius: 5px;
+    width: 100%;
+    padding: 11px 35px;
+  }
+
+  .catalog_container_card_purchase_price {
+    display: flex;
+  }
+
+  .catalog_container_card_purchase {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalog_container_card a {
+    text-align: center;
+    padding: 5px 22px;
+  }
+
+
+  .catalog_container_card h4 {
+    font-size: 13px;
+    width: 118px;
+  }
+
+  .catalog_container_card_purchase_price h5 {
+    font-size: 18px;
+  }
+
+  .catalog_container_card_image {
+    height: 62px;
+  }
+
+  .catalog_container_card_image.blad {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .catalog_container_card a {
+    font-size: 16px;
+  }
+
+  .catalog_container_card {
+    height: 350px;
+  }
+
 }
