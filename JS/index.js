@@ -8,24 +8,62 @@ const openNav = () => {
 }
 openNav()
 
-const swiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
+const swiperSlide = document.querySelectorAll('.swiper-slide')
+const swiperPogination = document.querySelectorAll(
+  '.swiper_container_pogination_el',
+)
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+let swiperIndex = 1
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+swiperPogination.forEach((el, i) => {
+  el.onclick = () => {
+    swiperIndex = i
 
-  // And if we need scrollbar
-  slidesPerView: 1,
-  spaceBetween: 100,
+    swiperPogination.forEach((elements) => {
+      elements.classList.remove('active')
+    })
+    el.classList.add('active')
+    showSwiperSlide()
+  }
 })
+function showSwiperSlide() {
+  swiperSlide.forEach((slide, i) => {
+    slide.classList.remove('active')
+    if (i == swiperIndex) {
+      slide.classList.add('active')
+    }
+  })
+}
+showSlide()
+
+const reviews = document.querySelectorAll('.reviews_container_block')
+const reviewsVideo = document.querySelector('.reviews_container_video')
+const reviewsPogination = document.querySelectorAll(
+  '.reviews_container_pogination_el',
+)
+
+const reviewsArr = Array.from(reviews)
+reviewsArr.push(reviewsVideo)
+
+let reviewsIndex = 1
+
+reviewsPogination.forEach((el, i) => {
+  el.onclick = () => {
+    reviewsIndex = i
+
+    reviewsPogination.forEach((elements) => {
+      elements.classList.remove('active')
+    })
+    el.classList.add('active')
+    showSlide()
+  }
+})
+function showSlide() {
+  reviewsArr.forEach((review, i) => {
+    review.classList.remove('active')
+    if (i == reviewsIndex) {
+      review.classList.add('active')
+    }
+  })
+}
+showSlide()

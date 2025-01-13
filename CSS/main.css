@@ -351,6 +351,19 @@ body {
     height: 30px;
     width: 30px;
   }
+
+  .menu_contacts_container p {
+    font-size: 14px;
+  }
+
+  .menu_contacts_info {
+    display: none;
+  }
+
+  .menu_contacts_container {
+    gap: 10px;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -749,123 +762,89 @@ body {
 
 .slider {
   /* display: none; */
+
 }
 
-
-.slider_card {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 30px 45px;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider_card h4 {
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.slider_card img {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.slider_card button {
-  font-size: 16px;
-  color: black;
-  padding: 15px 30px;
-  background: white;
-  font-weight: 700;
-  border-radius: 5px;
-}
-
-
-
-
-.swiper-container {
-  width: 100%;
-  height: 100%;
+.swiper-wrapper {
+  margin-top: 16px;
   position: relative;
-  display: none;
-  margin-top: 15px;
 }
 
 .swiper-slide {
+  padding: 30px 48px;
+  border-radius: 10px;
+  display: none;
+}
 
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  height: 100%;
-  padding: 30px 45px;
-  min-width: 0;
+.swiper-slide.active {
+  display: block;
 }
 
 .swiper-slide_a {
-
   background: url(../IMG/info_block/bg.png), linear-gradient(99.15deg, #50A6E3 0%, #A7DAFF 101.08%);
 
 }
 
 .swiper-slide_b {
-  background: linear-gradient(113.62deg, #2AB86B 0%, #5DE39A 97.37%),
+  background: url(../IMG/info_block/bg.png), linear-gradient(109.93deg, #2AB86B 3.2%, #5DE39A 113.67%),
     linear-gradient(0deg, rgba(0, 141, 65, 0.2), rgba(0, 141, 65, 0.2));
+
 }
 
 .swiper-slide_c {
-  background: linear-gradient(112.82deg, #F68AB1 0%, #FEB5CF 100%);
+  background: url(../IMG/info_block/bg.png), linear-gradient(113.5deg, #F68AB1 -5.26%, #FEB5CF 97.08%);
+
+
 }
 
 .swiper-slide h4 {
-  font-size: 15px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
   font-weight: 700;
-  color: #fff;
 }
 
 .swiper-slide img {
-  width: 191px;
-  height: 226px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .swiper-slide button {
-  font-size: 14px;
-  color: black;
-  padding: 15px 30px;
   background: white;
+  padding: 15px 20px;
+  font-size: 16px;
   font-weight: 700;
-}
-
-.swiper-pagination {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
+  border-radius: 5px;
   text-align: center;
 }
 
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  display: inline-block;
-  background: rgba(223, 223, 223, 1);
-  margin: 0 5px;
-  cursor: pointer;
+.swiper_container_pogination {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10%;
+  gap: 6px;
 }
 
-.swiper-pagination-bullet-active {
+.reviews_container_video.active {
+  display: initial;
+}
+
+.swiper_container_pogination_el {
+  content: "";
+  background: rgba(223, 223, 223, 1);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.swiper_container_pogination_el.active {
   background: rgba(240, 127, 174, 1);
 }
 
 @media screen and (max-width: 320px) {
   .swiper-container {
-    display: block;
+    display: initial;
   }
 }
 
@@ -1033,6 +1012,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1468px) {
@@ -1121,10 +1101,446 @@ body {
 @media screen and (max-width: 320px) {
   .catalog_container_card a {
     font-size: 16px;
+    padding: 5px 18px;
   }
+
 
   .catalog_container_card {
     height: 350px;
   }
 
+  .catalog_title h5 {
+    font-size: 18px;
+  }
+
+  .catalog_container_card_purchase_price p {
+    font-size: 11px;
+  }
+
+  .catalog_container {
+    grid-template-columns: repeat(2, 49%);
+  }
+}
+
+.neuroleptics {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.neuroleptics_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.neuroleptics_container_video {
+  /* background: url(../IMG/Neuroleptics/image\ 8.png) no-repeat; */
+  width: 40%;
+  position: relative;
+}
+
+.neuroleptics_container_video img {
+  width: 100%;
+  height: 100%;
+}
+
+.neuroleptics_container_video svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neuroleptics_container .catalog_container {
+  grid-template-columns: repeat(2, 48%);
+  width: 50%;
+}
+
+@media screen and (max-width: 1484px) {
+  .neuroleptics_container .catalog_container {
+    grid-template-columns: repeat(2, 48%);
+    width: 58%;
+  }
+}
+
+@media screen and (max-width: 1264px) {
+  .neuroleptics_container .catalog_container_card_text p {
+    display: none;
+
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_buy_quantity {
+    display: none;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_buy {
+    width: 100%;
+  }
+
+  .neuroleptics_container .catalog_container_card {
+    padding: 25px 10px 10px 10px;
+    height: 300px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_buy button {
+    border-radius: 5px;
+    width: 100%;
+    padding: 11px 35px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_price {
+    display: flex;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .neuroleptics_container .catalog_container_card a {
+    text-align: center;
+    padding: 5px 22px;
+  }
+
+
+  .neuroleptics_container .catalog_container_card h4 {
+    font-size: 13px;
+    width: 118px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_price h5 {
+    font-size: 18px;
+  }
+
+  .neuroleptics_container .catalog_container_card_image {
+    height: 62px;
+  }
+
+  .neuroleptics_container .catalog_container_card_image.blad {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .neuroleptics_container {
+    flex-direction: column;
+  }
+
+  .neuroleptics_container_video {
+    width: 100%;
+  }
+
+  .neuroleptics_container .catalog_container {
+    width: 100%;
+  }
+
+  .neuroleptics_container .catalog_container {
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    grid-auto-rows: max-content;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .neuroleptics_container .catalog_container_card_text p {
+    display: none;
+
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_buy_quantity {
+    display: none;
+  }
+
+
+  .neuroleptics_container .catalog_container_card_purchase_buy {
+    width: 100%;
+  }
+
+  .neuroleptics_container .catalog_container_card {
+    padding: 25px 10px 10px 10px;
+    height: 300px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_buy button {
+    border-radius: 5px;
+    width: 100%;
+    padding: 11px 35px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_price {
+    display: flex;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .neuroleptics_container .catalog_container_card a {
+    text-align: center;
+    padding: 5px 22px;
+  }
+
+
+  .neuroleptics_container .catalog_container_card h4 {
+    font-size: 13px;
+    width: 118px;
+  }
+
+  .neuroleptics_container .catalog_container_card_purchase_price h5 {
+    font-size: 18px;
+  }
+
+  .neuroleptics_container .catalog_container_card_image {
+    height: 62px;
+  }
+
+  .neuroleptics_container .catalog_container_card_image.blad {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .neuroleptics_container .catalog_container_card a {
+    font-size: 12px;
+  }
+}
+
+.catalog.last {
+  margin-bottom: 80px;
+}
+
+.certificates {
+  margin-bottom: 158px;
+}
+
+.certificates h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.certificates_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.certificates_container_text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: calc(50% - 15px);
+}
+
+.certificates_container_text_container.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.certificates_container_text_container.cetificat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.certificates_container_text_container h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.certificates_container_text_container p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.certificates_container_video {
+  position: relative;
+  width: calc(50% - 15px);
+}
+
+.certificates_container_video svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.certificates_container_text_cetificat_show_el {
+  width: 143px;
+  height: 202px;
+}
+
+@media screen and (max-width: 1100px) {
+  .certificates_container {
+    flex-direction: column;
+  }
+
+  .certificates_container_video {
+    width: 100%;
+  }
+
+  .certificates_container_video img {
+    width: 100%;
+  }
+
+  .certificates_container_text {
+    width: 100%;
+  }
+
+  .certificates_container_text_cetificat_show_el {
+    width: 32%;
+    height: auto;
+  }
+}
+
+.reviews {
+  margin-bottom: 80px;
+}
+
+.reviews_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.reviews_title a {
+  display: flex;
+  gap: 10px;
+  color: black;
+  font-size: 16px;
+}
+
+.reviews_title h5 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.reviews_title a:hover {
+  text-decoration: underline;
+}
+
+.reviews_container {
+  display: grid;
+  grid-template-rows: 250px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  position: relative;
+}
+
+.reviews_container_block {
+  border-radius: 10px;
+  border: solid 1px rgba(238, 238, 238, 1);
+  padding: 20px 40px 25px 20px;
+}
+
+.reviews_container_block.active {
+  display: initial;
+}
+
+.reviews_container_block_user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.reviews_container_block_user_info {
+  display: grid;
+}
+
+.reviews_container_block_user_info span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.reviews_container_block_user_info span:nth-child(2) {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(112, 112, 112, 1);
+}
+
+.reviews_container_video img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1515px) and (min-width: 649px) {
+  .reviews_container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews_container_block:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .reviews_container_block_user_info span {
+    font-size: 16px;
+  }
+
+  .reviews_container_block_user_info span:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .reviews_container_block p {
+    font-size: 14px;
+  }
+
+}
+
+.reviews_container_pogination {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10%;
+  gap: 6px;
+}
+
+.reviews_container_video.active {
+  display: initial;
+}
+
+.reviews_container_pogination_el {
+  content: "";
+  background: rgba(223, 223, 223, 1);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.reviews_container_pogination .active {
+  background: rgba(240, 127, 174, 1);
+}
+
+@media screen and (max-width: 648px) {
+  .reviews_container_pogination {
+    display: flex;
+  }
+
+  .reviews_container_video {
+    display: none;
+  }
+
+  .reviews_container {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews_container_block {
+    display: none;
+  }
 }
