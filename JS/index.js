@@ -13,29 +13,6 @@ const swiperPogination = document.querySelectorAll(
   '.swiper_container_pogination_el',
 )
 
-let swiperIndex = 1
-
-swiperPogination.forEach((el, i) => {
-  el.onclick = () => {
-    swiperIndex = i
-
-    swiperPogination.forEach((elements) => {
-      elements.classList.remove('active')
-    })
-    el.classList.add('active')
-    showSwiperSlide()
-  }
-})
-function showSwiperSlide() {
-  swiperSlide.forEach((slide, i) => {
-    slide.classList.remove('active')
-    if (i == swiperIndex) {
-      slide.classList.add('active')
-    }
-  })
-}
-showSlide()
-
 const reviews = document.querySelectorAll('.reviews_container_block')
 const reviewsVideo = document.querySelector('.reviews_container_video')
 const reviewsPogination = document.querySelectorAll(
@@ -45,25 +22,29 @@ const reviewsPogination = document.querySelectorAll(
 const reviewsArr = Array.from(reviews)
 reviewsArr.push(reviewsVideo)
 
-let reviewsIndex = 1
+function sliderPog(pagination, slidesArray) {
+  let indexSlide = 1
 
-reviewsPogination.forEach((el, i) => {
-  el.onclick = () => {
-    reviewsIndex = i
+  pagination.forEach((el, i) => {
+    el.onclick = () => {
+      indexSlide = i
 
-    reviewsPogination.forEach((elements) => {
-      elements.classList.remove('active')
-    })
-    el.classList.add('active')
-    showSlide()
-  }
-})
-function showSlide() {
-  reviewsArr.forEach((review, i) => {
-    review.classList.remove('active')
-    if (i == reviewsIndex) {
-      review.classList.add('active')
+      pagination.forEach((elements) => {
+        elements.classList.remove('active')
+      })
+      el.classList.add('active')
+      showSlide()
     }
   })
+  function showSlide() {
+    slidesArray.forEach((review, i) => {
+      review.classList.remove('active')
+      if (i == indexSlide) {
+        review.classList.add('active')
+      }
+    })
+  }
+  showSlide()
 }
-showSlide()
+sliderPog(swiperPogination, swiperSlide)
+sliderPog(reviewsPogination, reviewsArr)
